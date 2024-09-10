@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("./assets/lastSupper.jpg");
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(243, 244, 246, 0.7);
+    margin-bottom: 2rem;
+    padding: 0.3rem 0 0.3rem 0;
+
+    & nav {
+        background-color: rgba(243, 244, 246, 0.7);
+    }
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    & main {
+        background-color: rgba(243, 244, 246, 0.7);
+        width: 80%;
+        display: grid;
+        grid-template-areas: "pizza ristorante ristorante" "pizza blurb blurb";
+        grid-template-columns: 1fr 2fr 2fr;
+        padding: 1rem 0 1rem 0;
+        border-radius: 3px;
+
+        & #pizza {
+            grid-area: pizza;
+
+            & img {
+                height: auto;
+                width: 50%;
+            }
+
+            & span {
+                font-size: small;
+            }
+        }
+
+        & #ristorante {
+            grid-area: ristorante;
+        }
+
+        & #blurb {
+            grid-area: blurb;
+        }
+
+        & div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+    }
+}
