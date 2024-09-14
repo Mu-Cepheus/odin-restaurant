@@ -2,7 +2,8 @@ import pizzer from "./assets/pizza.jpg"
 
 function loader() {
     let content = document.querySelector("#content");
-    let main = document.createElement("main");
+    let main = document.querySelector("main");
+    main.classList.add("home")
     content.appendChild(main);
     let pizza = document.createElement("div");
     pizza.setAttribute("id", "pizza");

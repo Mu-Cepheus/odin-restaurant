@@ -15,10 +15,28 @@ header {
     justify-content: center;
     background-color: rgba(243, 244, 246, 0.7);
     margin-bottom: 2rem;
-    padding: 0.3rem 0 0.3rem 0;
+    padding: 0.3rem 0 0 0;
 
     & nav {
-        background-color: rgba(243, 244, 246, 0.7);
+        display: flex;
+        gap: 1rem;
+
+        & button {
+            appearance: none;
+            border-radius: 5px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            padding: 0.3rem;
+            background-color: white;
+            border-bottom: none;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            border-top: 1px solid black;
+
+            &.colored {
+                background-color: #aeab9e;
+            }
+        }
     }
 }
 
@@ -31,11 +49,14 @@ header {
     & main {
         background-color: rgba(243, 244, 246, 0.7);
         width: 80%;
+        padding: 1rem 0 1rem 0;
+        border-radius: 3px;
+    }
+
+    & main.home {
         display: grid;
         grid-template-areas: "pizza ristorante ristorante" "pizza blurb blurb";
         grid-template-columns: 1fr 2fr 2fr;
-        padding: 1rem 0 1rem 0;
-        border-radius: 3px;
 
         & #pizza {
             grid-area: pizza;
@@ -47,6 +68,7 @@ header {
 
             & span {
                 font-size: small;
+                text-align: center;
             }
         }
 
@@ -63,6 +85,63 @@ header {
             align-items: center;
             justify-content: center;
             flex-direction: column;
+        }
+    }
+
+    & main.menu {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 50%));
+        row-gap: 1rem;
+
+        & div.item {
+            margin: 0 20px 0 20px;
+            border: 1px solid black;
+            display: grid;
+            grid-template-areas: "pic name" "pic description";
+            text-align: center;
+
+            & img {
+                width: 256px;
+                height: 256px;
+            }
+
+            & .pic {
+                grid-area: pic;
+                display: flex;
+                justify-content: start;
+                align-items: center;
+            }
+
+            & .name {
+                grid-area: name;
+            }
+
+            & .description {
+                grid-area: description;
+            }
+        }
+    }
+
+    & main.contact {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & div.box {
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 1rem;
+
+            & h3 {
+                margin-bottom: 1rem;
+            }
+
+            & p:nth-child(2) {
+                font-weight: 600;
+            }
         }
     }
 }
